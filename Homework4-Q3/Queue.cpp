@@ -24,7 +24,7 @@ Queue::Queue(int n) {
 }
 
 Queue::~Queue() {
-	delete queue[];
+	delete[] queue;
 }
 
 Queue::Queue(const Queue & q) { // copy constructor
