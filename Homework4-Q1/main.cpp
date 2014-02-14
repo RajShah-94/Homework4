@@ -11,3 +11,8 @@
 
 using namespace std;
 
+int main() {
+	double array1[1000]; // on the stack
+	double * array2 = new double[1000]; // on the heap
+	delete[] array2; // delete operator
+}
