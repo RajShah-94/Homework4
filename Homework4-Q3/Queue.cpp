@@ -17,10 +17,10 @@ Queue::Queue() {
 
 Queue::Queue(int n) {
 	double * array = new double[n];
-		size = n;
-		entries = 0;
-		front = 0;
-		back = 0;
+	size = n;
+	entries = 0;
+	front = 0;
+	back = 0;
 }
 
 Queue::~Queue() {
@@ -47,9 +47,18 @@ double Queue::Pop() {
 }
 
 bool Queue::Push(double value) {
-   queue[back] = value;
-
+	 if (back >= size) {
+		 return false;
+	 }
+	 else {
+		 return true;
+	   }
+	 queue[back] = value;
+	 entries++;
+	 back++;
 }
+//
+
 
 void Queue::relocate() {
    if( front > 0) {
@@ -61,6 +70,7 @@ void Queue::relocate() {
      front = 0;
      back-=front;
    }
+   //i=front, add 1 to back, j=current i, add 1 to i
 }
 
 
