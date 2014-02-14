@@ -46,6 +46,8 @@ double Queue::Pop() {
      return value;
 }
 
+//Front will increase ad infinitum even if higher than array. Array will not show these extra values.
+
 bool Queue::Push(double value) {
 	 if (back >= size) {
 		 return false;
@@ -57,7 +59,7 @@ bool Queue::Push(double value) {
 	 entries++;
 	 back++;
 }
-//
+
 
 
 void Queue::relocate() {
@@ -70,7 +72,7 @@ void Queue::relocate() {
      front = 0;
      back-=front;
    }
-   //i=front, add 1 to back, j=current i, add 1 to i
+   //To prevent the front from exceeding the size of the array, the code shifts the queue back. It does this by assigning values to the difference and shifting back by it.
 }
 
 
